@@ -42,7 +42,7 @@
  div{
    position:relative;
  }
- a[href], button, label{
+ a[href], button, .button, input[type=submit], label{
    cursor:pointer;
  }
  *[title]{
@@ -222,30 +222,50 @@
  input[type=submit],
  button,
  .button{
+   position:relative;
+   border-radius:24px;
    text-transform:uppercase;
    letter-spacing:2px;
    background-color:#69c;
    color:#fff;
    font-weight:bold;
    text-align:center;
-   cursor:pointer;
-   font-size:10px;
    border-bottom:0;
-   transition: background-color 0.1s, border-color 0.1s, color 0.1s;
- }
- input[type=submit].secondary,
- button.secondary,
- .button.secondary{
-   border:1px solid #cdf;
-   background-color:#fff;
-   color:#69c;
+   font-size:10px;
+   padding-top:10px;
+   box-shadow: inset 0px -2px 5px 2px #369, 0px 1px 3px 0px #333;
+   transition: background-color 0.2s, padding-top 0.2s, box-shadow 0.2s, color 0.2s;
+   -webkit-transition: background-color 0.2s, padding-top 0.2s, box-shadow 0.2s, color 0.2s;
  }
  input[type=submit]:hover,
  button:hover,
  .button:hover{
-   border-color:transparent;
    background-color:#7ad;
    color:#fff;
+ }
+ input[type=submit]:active,
+ button:active,
+ .button:active{
+   padding-top:16px;
+   box-shadow: inset 0px 4px 5px 2px #369;
+ }
+ input[type=submit].secondary,
+ button.secondary,
+ .button.secondary{
+   background-color:#fff;
+   color:#69c;
+   box-shadow: inset 0px -2px 3px 1px #ddd, 0px 1px 3px 0px #333;
+ }
+ input[type=submit].secondary:hover,
+ button.secondary:hover,
+ .button.secondary:hover{
+   color:#666;
+   background-color:#eee;
+ }
+ input[type=submit].secondary:active,
+ button.secondary:active,
+ .button.secondary:active{
+   box-shadow: inset 0px 4px 3px 1px #ddd;
  }
  input[type=radio],
  input[type=checkbox]{
@@ -400,7 +420,7 @@
    display:block;
    height:18px;
  }
- table input,
+ table input[type=text],
  table label,
  table textarea{
    padding-top:0;
